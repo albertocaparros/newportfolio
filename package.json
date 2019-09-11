@@ -1,14 +1,14 @@
 {
-  "name": "gatsby-starter-solidstate",
+  "name": "Webportfolio",
   "version": "0.0.1",
-  "description": "Gatsby.js V2 starter template based on Solid State by HTML5 UP",
+  "description": "My web portfolio and online CV",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/anubhavsrivastava/gatsby-starter-solidstate.git"
   },
   "author": {
-    "name": "Anubhav Srivastava",
-    "email": "anubhav.srivastava00@gmail.com"
+    "name": "Alberto Caparrós",
+    "email": "albertocaparrostrigo@gmail.com"
   },
   "dependencies": {
     "gatsby": "^2.4.3",
