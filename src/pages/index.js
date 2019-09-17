@@ -1,10 +1,10 @@
 import React from 'react';
 
 import Layout from '../components/Layout';
-
-import pic1 from '../assets/images/pic01.jpg';
+import Scroll from '../components/Scroll';
+//import pic1 from '../assets/images/pic01.jpg';
 import pic2 from '../assets/images/pic02.jpg';
-import pic3 from '../assets/images/pic03.jpg';
+//import pic3 from '../assets/images/pic03.jpg';
 import pic4 from '../assets/images/pic04.jpg';
 import pic5 from '../assets/images/pic05.jpg';
 import pic6 from '../assets/images/pic06.jpg';
@@ -33,9 +33,11 @@ const IndexPage = () => (
         <p>{config.subHeading}</p>
         <ul className="actions">
           <li>
-            <a href="#footer" className="button primary">
-              Contact
-            </a>
+            <Scroll type="id" element="footer">
+              <a href="#footer" className="button primary">
+                Contact
+              </a>
+            </Scroll>
           </li>
         </ul>
       </div>
@@ -44,22 +46,27 @@ const IndexPage = () => (
     <section id="wrapper">
       <section id="one" className="wrapper spotlight style1">
         <div className="inner">
-          {/* <a href="/#" className="image">
-            <img src={pic1} alt="" />
-          </a> */}
           <div className="content">
             <h2 className="major">Skills</h2>
             <div>
               <div>
                 <h3>Graduado en Ingenieria Técnica de Sistemas</h3>
-                <img src={logoUAL} className="flag" />
+                <img
+                  src={logoUAL}
+                  className="flag"
+                  alt="logo university Almeria"
+                />
                 <p> 2007-2010 / 2011-2013 Universidad de Almería</p>
-                <img src={logoWroclaw} className="flag" />
+                <img
+                  src={logoWroclaw}
+                  className="flag"
+                  alt="logo university Wroclaw"
+                />
                 <p> 2010-2011 Universidad Tecnológica de Wroclaw, Polonia</p>
                 <div>
                   <h3>Experiencia laboral</h3>
 
-                  <img src={logoIBM} className="flag" />
+                  <img src={logoIBM} className="flag" alt="logo IBM" />
                   <p>
                     Programa de prácticas en IBM Bruselas, Belgica. Desarrollo
                     de un proyecto interno para el departamento de software de
@@ -67,7 +74,7 @@ const IndexPage = () => (
                   </p>
                 </div>
                 <div>
-                  <img src={logoEDPS} className="flag" />
+                  <img src={logoEDPS} className="flag" alt="logo EDPS" />
                   <p>
                     Programa de practicas en la Comisión Europa – Oficina del
                     Supervisor Europeo de Protección de Datos Trabajo con el
@@ -75,7 +82,11 @@ const IndexPage = () => (
                   </p>
                 </div>
                 <div>
-                  <img src={logoAyuntamiento} className="flag" />
+                  <img
+                    src={logoAyuntamiento}
+                    className="flag"
+                    alt="logo Ayuntamiento El Ejido"
+                  />
                   <p>
                     Analista y diseñador de software – Ayuntamiento de El Ejido.
                     Diseño y programación de soluciones para dispositivos
@@ -84,10 +95,6 @@ const IndexPage = () => (
                 </div>
               </div>
             </div>
-
-            {/* <a href="/#" className="special">
-              Learn more
-            </a> */}
           </div>
         </div>
       </section>
@@ -95,7 +102,7 @@ const IndexPage = () => (
       <section id="two" className="wrapper alt spotlight style2">
         <div className="inner">
           <a href="/#" className="image">
-            <img src={pic2} alt="" />
+            <img src={pic2} alt="My face" />
           </a>
           <div className="content">
             <h2 className="major">About me</h2>
@@ -110,23 +117,23 @@ const IndexPage = () => (
             <div>
               <h3>Idiomas</h3>
               <p>
-                <img src={flagSpanish} class="flag" />
+                <img src={flagSpanish} class="flag" alt="flag Spain" />
                 <strong>Español:</strong> Nativo
               </p>
 
               <p>
-                <img src={flagEnglish} class="flag" />
+                <img src={flagEnglish} class="flag" alt="flag UK" />
                 <strong>Ingles:</strong> Fluido. Certificado de inglés avanzado
                 por la Universidad de Cambridge (C2). TOEFL iBT Test.
               </p>
 
               <p>
-                <img src={flagFrench} class="flag" />
+                <img src={flagFrench} class="flag" alt="flag France" />
                 <strong>Frances:</strong> Básico.
               </p>
 
               <p>
-                <img src={flagJapanese} class="flag" />
+                <img src={flagJapanese} class="flag" alt="flag Japan" />
                 <strong>Japones:</strong> Principiante!
               </p>
             </div>
@@ -136,27 +143,6 @@ const IndexPage = () => (
           </div>
         </div>
       </section>
-
-      {/* <section id="three" className="wrapper spotlight style3">
-        <div className="inner">
-          <a href="/#" className="image">
-            <img src={pic3} alt="" />
-          </a>
-          <div className="content">
-            <h2 className="major">Nullam dignissim</h2>
-            <p>
-              Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras
-              turpis ante, nullam sit amet turpis non, sollicitudin posuere
-              urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim
-              dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla
-              cursus.
-            </p>
-            <a href="/#" className="special">
-              Learn more
-            </a>
-          </div>
-        </div>
-      </section> */}
 
       <section id="four" className="wrapper alt style1">
         <div className="inner">
@@ -170,7 +156,7 @@ const IndexPage = () => (
           <section className="features">
             <article>
               <a href="/#" className="image">
-                <img src={pic4} alt="" />
+                <img src={pic4} alt="Project" />
               </a>
               <h3 className="major">Sed feugiat lorem</h3>
               <p>
@@ -183,7 +169,7 @@ const IndexPage = () => (
             </article>
             <article>
               <a href="/#" className="image">
-                <img src={pic5} alt="" />
+                <img src={pic5} alt="Project" />
               </a>
               <h3 className="major">Nisl placerat</h3>
               <p>
@@ -196,7 +182,7 @@ const IndexPage = () => (
             </article>
             <article>
               <a href="/#" className="image">
-                <img src={pic6} alt="" />
+                <img src={pic6} alt="Project" />
               </a>
               <h3 className="major">Ante fermentum</h3>
               <p>
@@ -209,7 +195,7 @@ const IndexPage = () => (
             </article>
             <article>
               <a href="/#" className="image">
-                <img src={pic7} alt="" />
+                <img src={pic7} alt="Project" />
               </a>
               <h3 className="major">Fusce consequat</h3>
               <p>

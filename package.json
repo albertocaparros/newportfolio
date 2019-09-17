@@ -1,10 +1,10 @@
 {
-  "name": "Webportfolio",
+  "name": "webportfolio",
   "version": "0.0.1",
   "description": "My web portfolio and online CV",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anubhavsrivastava/gatsby-starter-solidstate.git"
+    "url": "git+https://https://github.com/albertocaparros/"
   },
   "author": {
     "name": "Alberto Caparrós",
@@ -36,7 +36,7 @@
   "devDependencies": {
     "gh-pages": "^2.0.1",
     "prettier": "^1.17.0",
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.7.1"
   },
   "keywords": [
     "gatsby",

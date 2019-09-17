@@ -5,10 +5,8 @@ export default function Footer() {
     <section id="footer">
       <div className="inner">
         <h2 className="major">Get in touch</h2>
-        <p>
-          Send me a message or get in contact with me through social media.
-        </p>
-        <form method="post" action="/#">
+        <p>Send me an e-mail or get in contact with me through social media.</p>
+        {/*  <form method="post" action="/#">
           <div className="fields">
             <div className="field">
               <label htmlFor="name">Name</label>
@@ -28,24 +26,29 @@ export default function Footer() {
               <input type="submit" value="Send Message" />
             </li>
           </ul>
-        </form>
+        </form> */}
         <ul className="contact">
-
           <li className="fa-phone">{config.phone}</li>
 
           {config.socialLinks.map(social => {
-            const { icon, url } = social;
+            const { icon, url, info } = social;
             return (
               <li className={`${icon}`} key={url}>
-                <a href={url}>{url}</a>
+                <a href={url}>{info}</a>
               </li>
             );
           })}
         </ul>
         <ul className="copyright">
-          <li>&copy; Solid State. All rights reserved.</li>
+          <li>Template: &copy; Solid State. All rights reserved.</li>
           <li>
             Design: <a href="http://html5up.net">HTML5 UP</a>
+          </li>
+          <li>
+            Template url:{' '}
+            <a href="https://github.com/anubhavsrivastava/gatsby-starter-solidstate/">
+              github.com/anubhavsrivastava/gatsby-starter-solidstate
+            </a>
           </li>
         </ul>
       </div>
