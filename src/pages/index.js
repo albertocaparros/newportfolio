@@ -2,6 +2,7 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 import Scroll from '../components/Scroll';
+import config from '../../config';
 //import pic1 from '../assets/images/pic01.jpg';
 import pic2 from '../assets/images/pic02.jpg';
 //import pic3 from '../assets/images/pic03.jpg';
@@ -21,203 +22,277 @@ import flagFrench from '../assets/images/french.png';
 import flagSpanish from '../assets/images/spanish.png';
 import flagJapanese from '../assets/images/japanese.png';
 
-import config from '../../config';
+import {
+  IntlProvider,
+  FormattedMessage,
+  FormattedHTMLMessage,
+} from 'react-intl';
+import messages_en from '../translations/en.json';
+import messages_es from '../translations/es.json';
+const messages = {
+  en: messages_en,
+  es: messages_es,
+};
+let language = navigator.language.split(/[-_]/)[0] === 'es' ? 'es' : 'en'; // language without region code
+
 const IndexPage = () => (
-  <Layout>
-    <section id="banner">
-      <div className="inner">
-        <div className="logo">
-          <span className="icon fa-laptop"></span>
-        </div>
-        <h2>{config.heading}</h2>
-        <p>{config.subHeading}</p>
-        <ul className="actions">
-          <li>
-            <Scroll type="id" element="footer">
-              <a href="#footer" className="button primary">
-                Contact
-              </a>
-            </Scroll>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="wrapper">
-      <section id="one" className="wrapper spotlight style1">
+  <IntlProvider locale={language} messages={messages[language]}>
+    <Layout>
+      <section id="banner">
         <div className="inner">
-          <div className="content">
-            <h2 className="major">Skills</h2>
-            <div>
-              <div>
-                <h3>Graduado en Ingenieria Técnica de Sistemas</h3>
-                <img
-                  src={logoUAL}
-                  className="flag"
-                  alt="logo university Almeria"
-                />
-                <p> 2007-2010 / 2011-2013 Universidad de Almería</p>
-                <img
-                  src={logoWroclaw}
-                  className="flag"
-                  alt="logo university Wroclaw"
-                />
-                <p> 2010-2011 Universidad Tecnológica de Wroclaw, Polonia</p>
-                <div>
-                  <h3>Experiencia laboral</h3>
+          <div className="logo">
+            <span className="icon fa-laptop"></span>
+          </div>
+          <h2>
+            <FormattedMessage id="heading" />
+          </h2>
+          <p>
+            <FormattedMessage id="subHeading" />
+          </p>
+          <ul className="actions">
+            <li>
+              <Scroll type="id" element="footer">
+                <a href="#footer" className="button primary">
+                  <FormattedMessage id="contact" />
+                </a>
+              </Scroll>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-                  <img src={logoIBM} className="flag" alt="logo IBM" />
-                  <p>
-                    Programa de prácticas en IBM Bruselas, Belgica. Desarrollo
-                    de un proyecto interno para el departamento de software de
-                    Benelux.
-                  </p>
-                </div>
+      <section id="wrapper">
+        <section id="one" className="wrapper spotlight style1">
+          <div className="inner">
+            <div className="content">
+              <h2 className="major">
+                <FormattedMessage id="education" />
+              </h2>
+              <div>
                 <div>
-                  <img src={logoEDPS} className="flag" alt="logo EDPS" />
-                  <p>
-                    Programa de practicas en la Comisión Europa – Oficina del
-                    Supervisor Europeo de Protección de Datos Trabajo con el
-                    área de normativa de IT.
-                  </p>
-                </div>
-                <div>
+                  <h3>
+                    <FormattedMessage id="degree" />
+                  </h3>
                   <img
-                    src={logoAyuntamiento}
+                    src={logoUAL}
                     className="flag"
-                    alt="logo Ayuntamiento El Ejido"
+                    alt="logo university Almeria"
                   />
                   <p>
-                    Analista y diseñador de software – Ayuntamiento de El Ejido.
-                    Diseño y programación de soluciones para dispositivos
-                    móviles.
+                    <FormattedMessage id="almeriaUni" />
                   </p>
+                  <img
+                    src={logoWroclaw}
+                    className="flag"
+                    alt="logo university Wroclaw"
+                  />
+                  <p>
+                    <FormattedMessage id="wroclawUni" />
+                  </p>
+                  <div>
+                    <h3>
+                      <FormattedMessage id="experience" />
+                    </h3>
+
+                    <img src={logoIBM} className="flag" alt="logo IBM" />
+                    <p>
+                      <FormattedMessage id="infoIBM" />
+                    </p>
+                  </div>
+                  <div>
+                    <img src={logoEDPS} className="flag" alt="logo EDPS" />
+                    <p>
+                      <FormattedMessage id="infoEDPS" />
+                    </p>
+                  </div>
+                  <div>
+                    <img
+                      src={logoAyuntamiento}
+                      className="flag"
+                      alt="logo Ayuntamiento El Ejido"
+                    />
+                    <p>
+                      <FormattedMessage id="infoEjido" />
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="two" className="wrapper alt spotlight style2">
-        <div className="inner">
-          <a href="/#" className="image">
-            <img src={pic2} alt="My face" />
-          </a>
-          <div className="content">
-            <h2 className="major">About me</h2>
-            <p>
-              Software developer - Frontend, Backend and Mobile Apps. I love to
-              live different experiences in different countries. Currently based
-              in Tokyo, enjoying a new culture and getting to know the software
-              developing world in this country. Scroll down for more information
-              about me, or click to see my contact information.
-            </p>
-
-            <div>
-              <h3>Idiomas</h3>
+        <section id="two" className="wrapper alt spotlight style2">
+          <div className="inner">
+            <a href="/#" className="image">
+              <img src={pic2} alt="My face" />
+            </a>
+            <div className="content">
+              <h2 className="major">
+                <FormattedMessage id="about" />
+              </h2>
               <p>
-                <img src={flagSpanish} class="flag" alt="flag Spain" />
-                <strong>Español:</strong> Nativo
+                <FormattedMessage id="presentation" />
               </p>
 
-              <p>
-                <img src={flagEnglish} class="flag" alt="flag UK" />
-                <strong>Ingles:</strong> Fluido. Certificado de inglés avanzado
-                por la Universidad de Cambridge (C2). TOEFL iBT Test.
-              </p>
+              <div>
+                <h3>
+                  <FormattedMessage id="languages" />
+                </h3>
+                <p>
+                  <img src={flagSpanish} class="flag" alt="flag Spain" />
+                  <FormattedHTMLMessage id="spanish" />
+                </p>
 
-              <p>
-                <img src={flagFrench} class="flag" alt="flag France" />
-                <strong>Frances:</strong> Básico.
-              </p>
+                <p>
+                  <img src={flagEnglish} class="flag" alt="flag UK" />
+                  <FormattedHTMLMessage id="english" />
+                </p>
 
-              <p>
-                <img src={flagJapanese} class="flag" alt="flag Japan" />
-                <strong>Japones:</strong> Principiante!
-              </p>
-            </div>
-            {/* <a href="/#" className="special">
+                <p>
+                  <img src={flagFrench} class="flag" alt="flag France" />
+                  <FormattedHTMLMessage id="french" />
+                </p>
+
+                <p>
+                  <img src={flagJapanese} class="flag" alt="flag Japan" />
+                  <FormattedHTMLMessage id="japanese" />
+                </p>
+              </div>
+              {/* <a href="/#" className="special">
               Learn more
             </a> */}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="four" className="wrapper alt style1">
+        <section id="four" className="wrapper  style1">
+          <div className="inner">
+            <h2 className="major">
+              <FormattedMessage id="projects" />
+            </h2>
+            <p>
+              <FormattedMessage id="infoProjects" />
+            </p>
+            <section className="features">
+              <article>
+                <a href="/#" className="image">
+                  <img src={pic4} alt="Project" />
+                </a>
+                <h3 className="major">Sed feugiat lorem</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
+                  nulla dignissim dapibus ultrices.
+                </p>
+                <a href="/#" className="special">
+                  Learn more
+                </a>
+              </article>
+              <article>
+                <a href="/#" className="image">
+                  <img src={pic5} alt="Project" />
+                </a>
+                <h3 className="major">Nisl placerat</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
+                  nulla dignissim dapibus ultrices.
+                </p>
+                <a href="/#" className="special">
+                  Learn more
+                </a>
+              </article>
+              <article>
+                <a href="/#" className="image">
+                  <img src={pic6} alt="Project" />
+                </a>
+                <h3 className="major">Ante fermentum</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
+                  nulla dignissim dapibus ultrices.
+                </p>
+                <a href="/#" className="special">
+                  Learn more
+                </a>
+              </article>
+              <article>
+                <a href="/#" className="image">
+                  <img src={pic7} alt="Project" />
+                </a>
+                <h3 className="major">Fusce consequat</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
+                  nulla dignissim dapibus ultrices.
+                </p>
+                <a href="/#" className="special">
+                  Learn more
+                </a>
+              </article>
+            </section>
+            {/*             <ul className="actions">
+              <li>
+                <a href="/#" className="button">
+                  Browse All
+                </a>
+              </li>
+            </ul> */}
+          </div>
+        </section>
+      </section>
+      <section id="footer">
         <div className="inner">
-          <h2 className="major">Proyectos</h2>
+          <h2 className="major">
+            <FormattedMessage id="touch" />
+          </h2>
           <p>
-            Ya que todos mis proyectos importantes han sido para uso privado no
-            puedo compartir su codigo. Actualmente estoy en proceso de crear
-            algunos proyectos propios, espero tener cosas importantes que
-            compartir pronto!
+            <FormattedMessage id="touchInfo" />
           </p>
-          <section className="features">
-            <article>
-              <a href="/#" className="image">
-                <img src={pic4} alt="Project" />
-              </a>
-              <h3 className="major">Sed feugiat lorem</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
-                nulla dignissim dapibus ultrices.
-              </p>
-              <a href="/#" className="special">
-                Learn more
-              </a>
-            </article>
-            <article>
-              <a href="/#" className="image">
-                <img src={pic5} alt="Project" />
-              </a>
-              <h3 className="major">Nisl placerat</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
-                nulla dignissim dapibus ultrices.
-              </p>
-              <a href="/#" className="special">
-                Learn more
-              </a>
-            </article>
-            <article>
-              <a href="/#" className="image">
-                <img src={pic6} alt="Project" />
-              </a>
-              <h3 className="major">Ante fermentum</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
-                nulla dignissim dapibus ultrices.
-              </p>
-              <a href="/#" className="special">
-                Learn more
-              </a>
-            </article>
-            <article>
-              <a href="/#" className="image">
-                <img src={pic7} alt="Project" />
-              </a>
-              <h3 className="major">Fusce consequat</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
-                nulla dignissim dapibus ultrices.
-              </p>
-              <a href="/#" className="special">
-                Learn more
-              </a>
-            </article>
-          </section>
+          {/*  <form method="post" action="/#">
+          <div className="fields">
+            <div className="field">
+              <label htmlFor="name">Name</label>
+              <input type="text" name="name" id="name" />
+            </div>
+            <div className="field">
+              <label htmlFor="email">Email</label>
+              <input type="email" name="email" id="email" />
+            </div>
+            <div className="field">
+              <label htmlFor="message">Message</label>
+              <textarea name="message" id="message" rows="4"></textarea>
+            </div>
+          </div>
           <ul className="actions">
             <li>
-              <a href="/#" className="button">
-                Browse All
+              <input type="submit" value="Send Message" />
+            </li>
+          </ul>
+        </form> */}
+          <ul className="contact">
+            <li className="fa-phone">{config.phone}</li>
+            {config.socialLinks.map(social => {
+              const { icon, url, info } = social;
+              return (
+                <li className={`${icon}`} key={url}>
+                  <a href={url}>{info}</a>
+                </li>
+              );
+            })}
+          </ul>
+          <ul className="copyright">
+            <li>Template: &copy; Solid State. All rights reserved.</li>
+            <li>
+              Design: <a href="http://html5up.net">HTML5 UP</a>
+            </li>
+            <li>
+              Template url:{' '}
+              <a href="https://github.com/anubhavsrivastava/gatsby-starter-solidstate/">
+                github.com/anubhavsrivastava/gatsby-starter-solidstate
               </a>
             </li>
           </ul>
         </div>
       </section>
-    </section>
-  </Layout>
+    </Layout>
+  </IntlProvider>
 );
 
 export default IndexPage;
