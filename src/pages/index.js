@@ -33,7 +33,10 @@ const messages = {
   en: messages_en,
   es: messages_es,
 };
-let language = navigator.language.split(/[-_]/)[0] === 'es' ? 'es' : 'en'; // language without region code
+let language =
+  typeof window !== 'undefined' && navigator.language.split(/[-_]/)[0] === 'es'
+    ? 'es'
+    : 'en';
 
 const IndexPage = () => (
   <IntlProvider locale={language} messages={messages[language]}>
