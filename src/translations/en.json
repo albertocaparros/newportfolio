@@ -20,5 +20,10 @@
   "projects": "Projects",
   "infoProjects": "Since all my important proyects are privately own, I am not allowed to share the code. Currently on the process of creating some personal proyects for my github account, I hope I can share some of them in no time!",
   "touch": "Get in touch",
-  "touchInfo": "Send me an e-mail or get in contact with me through social media."
+  "touchInfo": "Send me an e-mail or get in contact with me through social media.",
+  "infoIntegration": "IBM Notes Portal built with XPages. Software solution that integrated the most relevant information and tools that IBM Benelux managers use daily.",
+  "more": "Learn more",
+  "infoPlayas": "Mobile application with all the information on the city's beaches. Characteristics, services, location, weather information, etc. Frontend developed with Ionic framework, backend developed in PHP/MySQL.",
+  "infoInformate": "Mobile application with the most relevant information of the city. Includes featured news, events, bulletin board, taxpayer calendar, etc. Frontend developed with Ionic framework, backend developed in PHP/MySQL.",
+  "infoSituame": "Mobile and web application with information and tools related to the city bus services. Includes maps, schedules, prices, realtime bus locations, etc. Frontend developed with Ionic framework, backend developed in PHP/MySQL."
 }

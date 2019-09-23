@@ -20,5 +20,10 @@
   "projects": "Proyectos",
   "infoProjects": "Ya que todos mis proyectos importantes han sido para uso privado no puedo compartir su codigo. Actualmente estoy en proceso de crear algunos proyectos propios, espero tener cosas importantes que compartir pronto!",
   "touch": "Ponte en contacto",
-  "touchInfo": "Mandame un e-mail o contactame a traves de mis redes sociales."
+  "touchInfo": "Mandame un e-mail o contactame a traves de mis redes sociales.",
+  "infoIntegration": "Portal de IBM Notes creado con XPages. Solución que integra la información y herramientas más relevantes que los managers de IBM Benelux utilizan diariamente.",
+  "more": "Ver mas",
+  "infoPlayas": "Aplicación movil con toda la información de las playas del municipio de El Ejido. Características, servicios, localización, información meteorológica, etc. Frontend creado con el framework Ionic, backend desarollado en PHP/MySQL.",
+  "infoInformate": "Aplicación con la información mas relevante de el municipio. Incluye noticias destacadas, eventos, tablón de anuncios, calendario del contribuyente, etc. Frontend creado con el framework Ionic, backend desarollado en PHP/MySQL.",
+  "infoSituame": "Aplicación web y movil con información y herramientas relacionadas con el servicio de autobuses municipal. Incluye mapas, horarios, precios, localicación de autobuses en tiempo real, etc. Frontend creado con el framework Ionic, backend desarollado en PHP/MySQL."
 }

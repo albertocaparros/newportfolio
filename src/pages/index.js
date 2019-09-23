@@ -3,13 +3,13 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Scroll from '../components/Scroll';
 import config from '../../config';
-//import pic1 from '../assets/images/pic01.jpg';
-import pic2 from '../assets/images/pic02.jpg';
-//import pic3 from '../assets/images/pic03.jpg';
-import pic4 from '../assets/images/pic04.jpg';
-import pic5 from '../assets/images/pic05.jpg';
-import pic6 from '../assets/images/pic06.jpg';
-import pic7 from '../assets/images/pic07.jpg';
+
+import profile from '../assets/images/profile.jpg';
+
+import integration from '../assets/images/integration.jpg';
+import playas from '../assets/images/playas.jpg';
+import informate from '../assets/images/informate.jpg';
+import situame from '../assets/images/situame.jpg';
 
 import logoUAL from '../assets/images/logo-ual.jpg';
 import logoEDPS from '../assets/images/logo-edps.png';
@@ -39,7 +39,7 @@ let language =
     : 'en';
 
 const IndexPage = () => (
-  <IntlProvider locale={language} messages={messages[language]}>
+  <IntlProvider key={language} locale={language} messages={messages[language]}>
     <Layout>
       <section id="banner">
         <div className="inner">
@@ -127,7 +127,7 @@ const IndexPage = () => (
         <section id="two" className="wrapper alt spotlight style2">
           <div className="inner">
             <a href="/#" className="image">
-              <img src={pic2} alt="My face" />
+              <img src={profile} alt="My face" />
             </a>
             <div className="content">
               <h2 className="major">
@@ -142,22 +142,22 @@ const IndexPage = () => (
                   <FormattedMessage id="languages" />
                 </h3>
                 <p>
-                  <img src={flagSpanish} class="flag" alt="flag Spain" />
+                  <img src={flagSpanish} className="flag" alt="flag Spain" />
                   <FormattedHTMLMessage id="spanish" />
                 </p>
 
                 <p>
-                  <img src={flagEnglish} class="flag" alt="flag UK" />
+                  <img src={flagEnglish} className="flag" alt="flag UK" />
                   <FormattedHTMLMessage id="english" />
                 </p>
 
                 <p>
-                  <img src={flagFrench} class="flag" alt="flag France" />
+                  <img src={flagFrench} className="flag" alt="flag France" />
                   <FormattedHTMLMessage id="french" />
                 </p>
 
                 <p>
-                  <img src={flagJapanese} class="flag" alt="flag Japan" />
+                  <img src={flagJapanese} className="flag" alt="flag Japan" />
                   <FormattedHTMLMessage id="japanese" />
                 </p>
               </div>
@@ -178,55 +178,91 @@ const IndexPage = () => (
             </p>
             <section className="features">
               <article>
-                <a href="/#" className="image">
-                  <img src={pic4} alt="Project" />
+                <a
+                  href="https://github.com/carlosparreno/IntegrationOnTheGlass"
+                  target="_blank"
+                  className="image"
+                  rel="noopener noreferrer"
+                >
+                  <img src={integration} alt="Project" />
                 </a>
-                <h3 className="major">Sed feugiat lorem</h3>
+                <h3 className="major">Integration on the glass</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
-                  nulla dignissim dapibus ultrices.
+                  <FormattedMessage id="infoIntegration" />
                 </p>
-                <a href="/#" className="special">
-                  Learn more
+                <a
+                  href="https://github.com/carlosparreno/IntegrationOnTheGlass"
+                  target="_blank"
+                  className="special"
+                  rel="noopener noreferrer"
+                >
+                  <FormattedMessage id="more" />
                 </a>
               </article>
               <article>
-                <a href="/#" className="image">
-                  <img src={pic5} alt="Project" />
+                <a
+                  href="https://play.google.com/store/apps/details?id=es.aytoelejido.playas"
+                  target="_blank"
+                  className="image"
+                  rel="noopener noreferrer"
+                >
+                  <img src={playas} alt="Project" />
                 </a>
-                <h3 className="major">Nisl placerat</h3>
+                <h3 className="major">Playas El Ejido</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
-                  nulla dignissim dapibus ultrices.
+                  <FormattedMessage id="infoPlayas" />
                 </p>
-                <a href="/#" className="special">
-                  Learn more
+                <a
+                  href="https://play.google.com/store/apps/details?id=es.aytoelejido.playas"
+                  target="_blank"
+                  className="special"
+                  rel="noopener noreferrer"
+                >
+                  <FormattedMessage id="more" />
                 </a>
               </article>
               <article>
-                <a href="/#" className="image">
-                  <img src={pic6} alt="Project" />
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.elejido.eventos"
+                  target="_blank"
+                  className="image"
+                  rel="noopener noreferrer"
+                >
+                  <img src={informate} alt="Project" />
                 </a>
-                <h3 className="major">Ante fermentum</h3>
+                <h3 className="major">Informate El Ejido</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
-                  nulla dignissim dapibus ultrices.
+                  <FormattedMessage id="infoInformate" />
                 </p>
-                <a href="/#" className="special">
-                  Learn more
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.elejido.eventos"
+                  target="_blank"
+                  className="special"
+                  rel="noopener noreferrer"
+                >
+                  <FormattedMessage id="more" />
                 </a>
               </article>
               <article>
-                <a href="/#" className="image">
-                  <img src={pic7} alt="Project" />
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.situame.autobuses"
+                  target="_blank"
+                  className="image"
+                  rel="noopener noreferrer"
+                >
+                  <img src={situame} alt="Project" />
                 </a>
-                <h3 className="major">Fusce consequat</h3>
+                <h3 className="major">Sitúame El Ejido</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
-                  nulla dignissim dapibus ultrices.
+                  <FormattedMessage id="infoSituame" />
                 </p>
-                <a href="/#" className="special">
-                  Learn more
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.situame.autobuses"
+                  target="_blank"
+                  className="special"
+                  rel="noopener noreferrer"
+                >
+                  <FormattedMessage id="more" />
                 </a>
               </article>
             </section>
@@ -270,12 +306,13 @@ const IndexPage = () => (
           </ul>
         </form> */}
           <ul className="contact">
-            <li className="fa-phone">{config.phone}</li>
             {config.socialLinks.map(social => {
               const { icon, url, info } = social;
               return (
                 <li className={`${icon}`} key={url}>
-                  <a href={url}>{info}</a>
+                  <a target="_blank" href={url} rel="noopener noreferrer">
+                    {info}
+                  </a>
                 </li>
               );
             })}
