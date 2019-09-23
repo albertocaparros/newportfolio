@@ -22,11 +22,7 @@ import flagFrench from '../assets/images/french.png';
 import flagSpanish from '../assets/images/spanish.png';
 import flagJapanese from '../assets/images/japanese.png';
 
-import {
-  IntlProvider,
-  FormattedMessage,
-  FormattedHTMLMessage,
-} from 'react-intl';
+import { IntlProvider, FormattedMessage } from 'react-intl';
 import messages_en from '../translations/en.json';
 import messages_es from '../translations/es.json';
 const messages = {
@@ -143,22 +139,34 @@ const IndexPage = () => (
                 </h3>
                 <p>
                   <img src={flagSpanish} className="flag" alt="flag Spain" />
-                  <FormattedHTMLMessage id="spanish" />
+                  <strong>
+                    <FormattedMessage id="spanish" />
+                  </strong>
+                  <FormattedMessage id="spanishInfo" />
                 </p>
 
                 <p>
                   <img src={flagEnglish} className="flag" alt="flag UK" />
-                  <FormattedHTMLMessage id="english" />
+                  <strong>
+                    <FormattedMessage id="english" />
+                  </strong>
+                  <FormattedMessage id="englishInfo" />
                 </p>
 
                 <p>
                   <img src={flagFrench} className="flag" alt="flag France" />
-                  <FormattedHTMLMessage id="french" />
+                  <strong>
+                    <FormattedMessage id="french" />
+                  </strong>
+                  <FormattedMessage id="frenchInfo" />
                 </p>
 
                 <p>
                   <img src={flagJapanese} className="flag" alt="flag Japan" />
-                  <FormattedHTMLMessage id="japanese" />
+                  <strong>
+                    <FormattedMessage id="japanese" />
+                  </strong>
+                  <FormattedMessage id="japaneseInfo" />
                 </p>
               </div>
               {/* <a href="/#" className="special">
